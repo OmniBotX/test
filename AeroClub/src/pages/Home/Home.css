@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap");
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.home-container {
+  font-family: "Orbitron", monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.5s ease;
+}
+
+/* Section Base Styles */
+section {
+  padding: 80px 2rem;
+  position: relative;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    45deg,
+    var(--neon-blue),
+    var(--neon-purple),
+    var(--neon-cyan)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Scroll Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      var(--neon-blue),
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 20%, var(--neon-purple), transparent 50%);
+  background-blend-mode: overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+:root.light .hero-section {
+  background: var(--bg-secondary);
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      var(--neon-pink),
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 20%, var(--neon-orange), transparent 50%);
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    45deg,
+    var(--neon-blue),
+    var(--neon-cyan),
+    var(--neon-purple)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px var(--neon-blue);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 3rem;
+  margin-top: 0.5rem;
+  color: var(--neon-cyan);
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%2300d4ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  animation: gridMove 20s linear infinite;
+}
+
+/* Mission Section */
+.mission-section {
+  background: var(--bg-tertiary);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root.light .mission-section {
+  background: var(--bg-tertiary);
+}
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.mission-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mission-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.mission-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.drone-image-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 2px solid var(--neon-blue);
+  border-opacity: 0.3;
+  box-shadow: 0 10px 40px var(--neon-blue);
+}
+
+.mission-drone-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.2);
+  transition: all 0.3s ease;
+}
+
+.drone-image-container:hover .mission-drone-img {
+  filter: brightness(1) contrast(1.3);
+  transform: scale(1.05);
+}
+
+.drone-overlay-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.scanning-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--neon-cyan),
+    transparent
+  );
+  animation: scanningEffect 3s linear infinite;
+}
+
+.hologram-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(var(--neon-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--neon-blue) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+}
+
+/* Focus Section */
+.focus-section {
+  background: var(--bg-secondary);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* Achievements Section */
+.achievements-section {
+  background: var(--bg-primary);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Neon Cards */
+.neon-card {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-blue);
+  border-opacity: 0.3;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.neon-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 10px 40px var(--neon-blue), 0 0 0 1px var(--neon-blue),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.neon-card:nth-child(2n):hover {
+  box-shadow: 0 10px 40px var(--neon-purple), 0 0 0 1px var(--neon-purple),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: var(--neon-purple);
+}
+
+.neon-card:nth-child(3n):hover {
+  box-shadow: 0 10px 40px var(--neon-cyan), 0 0 0 1px var(--neon-cyan),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: var(--neon-cyan);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--neon-cyan);
+}
+
+.card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--neon-blue),
+    transparent 70%
+  );
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.neon-card:hover .card-glow {
+  opacity: 0.1;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--bg-tertiary);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.cta-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    45deg,
+    var(--neon-orange),
+    var(--neon-pink),
+    var(--neon-purple)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 12px var(--neon-orange);
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.neon-btn,
+.cta-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-family: "Orbitron", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-btn,
+.primary-btn {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-cyan));
+  color: var(--bg-primary);
+  box-shadow: 0 5px 20px var(--neon-blue);
+}
+
+.hero-btn:hover,
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--neon-blue);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--neon-purple);
+  border: 2px solid var(--neon-purple);
+  box-shadow: 0 5px 20px var(--neon-purple);
+}
+
+.secondary-btn:hover {
+  background: var(--neon-purple);
+  color: var(--bg-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--neon-purple);
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.paper-plane {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatAround 15s linear infinite;
+  opacity: 0.6;
+}
+
+.plane-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 20s;
+}
+.plane-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 5s;
+  animation-duration: 18s;
+}
+.plane-3 {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 10s;
+  animation-duration: 22s;
+}
+
+/* Animations */
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  }
+  100% {
+    text-shadow: 0 0 15px var(--neon-cyan), 0 0 25px var(--neon-cyan);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+@keyframes scanningEffect {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translateX(-100px) translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(-50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .cta-title {
+    font-size: 3rem;
+  }
+
+  .mission-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .drone-image-container {
+    width: 300px;
+    height: 200px;
+  }
+
+  .focus-grid,
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .neon-btn,
+  .cta-btn {
+    width: 200px;
+  }
+
+  section {
+    padding: 60px 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .mission-description,
+  .hero-description,
+  .cta-description {
+    font-size: 1rem;
+  }
+
+  .drone-image-container {
+    width: 250px;
+    height: 180px;
+  }
+
+  section {
+    padding: 40px 1rem;
+  }
+}

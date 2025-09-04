@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Drone Flight", "image": "drone1.jpg" },
+  { "id": 2, "title": "Paper Plane Competition", "image": "paper_plane.jpg" },
+  { "id": 3, "title": "Aerial View", "image": "aerial_view.jpg" },
+  { "id": 4, "title": "Workshop Session", "image": "workshop.jpg" }
+]

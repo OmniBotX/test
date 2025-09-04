@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "title": "Coordinator",
+    "image": "alice.jpg"
+  },
+  { "id": 2, "name": "Bob Smith", "title": "Executive", "image": "bob.jpg" },
+  {
+    "id": 3,
+    "name": "Clara Williams",
+    "title": "Coordinator",
+    "image": "clara.jpg"
+  },
+  { "id": 4, "name": "Dave Brown", "title": "Executive", "image": "dave.jpg" },
+  { "id": 5, "name": "Emma Davis", "title": "Executive", "image": "emma.jpg" }
+]

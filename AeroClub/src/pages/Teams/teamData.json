@@ -1,0 +1,89 @@
+{
+  "executive": [
+    {
+      "id": 1,
+      "name": "Aditya",
+      "position": "President",
+      "originalPhoto": "aditya.jpg",
+      "altPhoto": "aditya.jpg",
+      "informalTitle": "Sky Commander",
+      "description": "Leading AeroClub to soar beyond limits with innovative vision and passion."
+    },
+    {
+      "id": 2,
+      "name": "Ananya",
+      "position": "Vice President",
+      "originalPhoto": "ananya.jpg",
+      "altPhoto": "ananya.jpg",
+      "informalTitle": "Wing Leader",
+      "description": "The strategic mind behind every successful flight mission."
+    },
+    {
+      "id": 3,
+      "name": "Isha",
+      "position": "Secretary",
+      "originalPhoto": "isha.jpg",
+      "altPhoto": "isha.jpg",
+      "informalTitle": "Detail Pilot",
+      "description": "Keeping every document flight-ready and perfectly organized."
+    },
+    {
+      "id": 4,
+      "name": "Kavya",
+      "position": "Treasurer",
+      "originalPhoto": "kavya.jpg",
+      "altPhoto": "kavya.jpg",
+      "informalTitle": "Money Navigator",
+      "description": "Managing funds to fuel our aerospace dreams and ambitions."
+    },
+    {
+      "id": 5,
+      "name": "Vikram",
+      "position": "Executive Member",
+      "originalPhoto": "vikram.jpg",
+      "altPhoto": "vikram.jpg",
+      "informalTitle": "Aviation Ace",
+      "description": "Supporting the team with aviation expertise and dedication."
+    }
+  ],
+  "overallCoordinator": [
+    {
+      "id": 6,
+      "name": "Arjun",
+      "position": "Overall Coordinator",
+      "originalPhoto": "arjun.jpg",
+      "altPhoto": "arjun-alt.jpg",
+      "informalTitle": "Master Navigator",
+      "description": "Orchestrating all club activities with precision and expertise."
+    }
+  ],
+  "coordinators": [
+    {
+      "id": 7,
+      "name": "Priya",
+      "position": "Technical Coordinator",
+      "originalPhoto": "Priya.jpg",
+      "altPhoto": "Priya.jpg",
+      "informalTitle": "Drone Whisperer",
+      "description": "Making UAVs dance in the sky with technical wizardry."
+    },
+    {
+      "id": 8,
+      "name": "Rahul",
+      "position": "Event Coordinator",
+      "originalPhoto": "rahul.jpg",
+      "altPhoto": "rahul.jpg",
+      "informalTitle": "Sky Organizer",
+      "description": "Creating events that lift spirits and inspire innovation."
+    },
+    {
+      "id": 9,
+      "name": "Sneha",
+      "position": "Outreach Coordinator",
+      "originalPhoto": "sneha.jpg",
+      "altPhoto": "Arjun.jpg",
+      "informalTitle": "Ambassador of Flight",
+      "description": "Spreading the joy of aviation across IITD and beyond."
+    }
+  ]
+}

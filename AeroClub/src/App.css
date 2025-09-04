@@ -1,0 +1,91 @@
+/* CSS Variables for Theme System */
+:root {
+  /* Dark Theme Colors */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --bg-card: rgba(20, 20, 30, 0.9);
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-accent: #00d4ff;
+
+  /* Neon Colors */
+  --neon-blue: #00d4ff;
+  --neon-purple: #8a2be2;
+  --neon-pink: #ff1493;
+  --neon-cyan: #00ffff;
+  --neon-green: #39ff14;
+  --neon-orange: #ff4500;
+}
+
+/* Light Theme Colors */
+:root.light {
+  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --bg-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --bg-card: rgba(255, 255, 255, 0.15);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-accent: #ff6b6b;
+
+  /* Light Theme Neon Colors */
+  --neon-blue: #ff6b6b;
+  --neon-purple: #4ecdc4;
+  --neon-pink: #45b7d1;
+  --neon-cyan: #96ceb4;
+  --neon-green: #ffeaa7;
+  --neon-orange: #fd79a8;
+}
+
+/* App Base Styles */
+.app {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.5s ease;
+}
+
+.app.light {
+  background: var(--bg-primary);
+}
+
+.main-content {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade-in Animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadein {
+  animation: fadein 0.8s ease-out;
+}
+
+/* Active Navigation State */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: var(--neon-blue) !important;
+  background: rgba(var(--neon-blue), 0.15) !important;
+  box-shadow: 0 0 15px rgba(var(--neon-blue), 0.3) !important;
+}
+
+/* Ensure navbar is above all content */
+.navbar {
+  z-index: 1000;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
