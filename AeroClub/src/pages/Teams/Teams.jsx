@@ -54,42 +54,34 @@ const Teams = () => {
       <div className="card-inner">
         {/* Front of card - Show Name and Position */}
         <div className="card-front">
-          <div className="card-image-container">
-            <img
-              src={getImagePath(member, false)}
-              alt={member.name}
-              className="card-image"
-              onError={(e) => {
-                e.target.src = "/Logo/Aeroclub.png";
-              }}
-            />
-            <div className="card-overlay">
-              <div className="card-content">
-                <h3 className="member-name">{member.name}</h3>
-                <p className="member-position">{member.position}</p>
-              </div>
-            </div>
+          <img
+            src={getImagePath(member, false)}
+            alt={member.name}
+            className="card-image"
+            onError={(e) => {
+              e.target.src = "/Logo/Aeroclub.png";
+            }}
+          />
+          <div className="name-overlay">
+            <h3 className="card-name">{member.name}</h3>
+            <p className="card-position">{member.position}</p>
           </div>
         </div>
 
         {/* Back of card - Show Alt Image with Funny Liner */}
         <div className="card-back">
-          <div className="card-image-container">
-            <img
-              src={getImagePath(member, true)}
-              alt={member.name}
-              className="card-image"
-              onError={(e) => {
-                e.target.src = "/Logo/Aeroclub.png";
-              }}
-            />
-            <div className="card-overlay card-overlay-back">
-              <div className="card-content">
-                <h3 className="member-name">{member.name}</h3>
-                <p className="informal-title">"{member.informalTitle}"</p>
-                <p className="funny-liner">"{member.description}"</p>
-              </div>
-            </div>
+          <img
+            src={getImagePath(member, true)}
+            alt={member.name}
+            className="card-image"
+            onError={(e) => {
+              e.target.src = "/Logo/Aeroclub.png";
+            }}
+          />
+          <div className="back-overlay">
+            <h3 className="card-name-back">{member.name}</h3>
+            <p className="card-title">"{member.informalTitle}"</p>
+            <p className="card-description">"{member.description}"</p>
           </div>
         </div>
       </div>
